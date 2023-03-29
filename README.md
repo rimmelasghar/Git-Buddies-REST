@@ -45,6 +45,12 @@ run the Project by executing this.
 $ uvicorn <filename without extension>:app --reload
 ```
 
+for this Project.
+```bash
+$ uvicorn main:app --reload
+```
+
+
 Project will be available on
 ``http://127.0.0.1:8000``
 
@@ -57,17 +63,15 @@ for accessing Swagger UI
 ### TOKEN ENDPOINT
 
 | Endpoint | Request | Parameter | Type     | Description                       |
-
-| :-------- | :-------- | :------- | :-------------------------------- |
+| :-------- | :-------- | :-------- | :------- | :-------------------------------- |
 | `/token/`     | `POST`     |   `username,password,scope`  | `string` | **REQUIRED**  |
 
 
 ### USER ENDPOINT
 
 | Endpoint | Request | Parameter | Type     | Description                       |
-
-| :-------- | :-------- | :------- | :-------------------------------- |
-| `/user/me`     | `GET`     |  -     | - | -  |
+| :-------- | :-------- | :------- | :-------- | :-------------------------------- |
+| `/user/me`     | `GET`     |  `- `    | `-` | -  |
 | `/user/add`     | `POST`     |  -     | - | -  |
 | `/user/delete`     | `DELETE`     |  -   | -| -  |
 | `/user/update`     | `PUT`     | -     | - | -  |
@@ -76,12 +80,11 @@ for accessing Swagger UI
 ### REPOSITORY ENDPOINT
 
 | Endpoint | Request | Parameter | Type     | Description                       |
-| :-------- | :-------- | :------- | :-------------------------------- |
-
+| :-------- | :--------| :--------  | :------- | :-------------------------------- |
 | `/boosted/repos`     | `GET`     |-     | - | -  |
 | `/boosted/repos`     | `POST`     |-     | - | -  |
-| `/boosted/repos/{id}`     | `PUT`     | `id`   | `string` | **REQUIRED**  |
-| `/boosted/repos/{id}`     | `DELETE`     | `id`   | `string` | **REQUIRED**  |
+| `/boosted/repos/{id}`     | `PUT`     | `id`   | `string` | **REQUIRED** unique identifier  |
+| `/boosted/repos/{id}`     | `DELETE`     | `id`   | `string` | **REQUIRED**  unique identifier|
 
 
 
