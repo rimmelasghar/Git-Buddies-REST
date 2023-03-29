@@ -1,2 +1,2 @@
-# Git-Buddies-REST
-Rest framework for git Buddies
+# Git-Buddies
+RESTApi With Auth2.0 scopes.
