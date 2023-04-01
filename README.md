@@ -1,8 +1,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 # Git Buddies REST
-This is an Unofficial Chat-GPT Api built with Flask & playwright.
-This Flask Project act as a Wrapper around ChatGpt.
+REST-API for official Git Buddies
 # ⚙️ Prerequisites
 
 - You need to have python installed. You can install it from microsoft store or follow this [guide](https://www.geeksforgeeks.org/how-to-install-python-on-windows/).
@@ -46,6 +45,12 @@ run the Project by executing this.
 $ uvicorn <filename without extension>:app --reload
 ```
 
+for this Project.
+```bash
+$ uvicorn main:app --reload
+```
+
+
 Project will be available on
 ``http://127.0.0.1:8000``
 
@@ -58,15 +63,15 @@ for accessing Swagger UI
 ### TOKEN ENDPOINT
 
 | Endpoint | Request | Parameter | Type     | Description                       |
-| :-------- | :-------- | :------- | :-------------------------------- |
+| :-------- | :-------- | :-------- | :------- | :-------------------------------- |
 | `/token/`     | `POST`     |   `username,password,scope`  | `string` | **REQUIRED**  |
 
 
 ### USER ENDPOINT
 
 | Endpoint | Request | Parameter | Type     | Description                       |
-| :-------- | :-------- | :------- | :-------------------------------- |
-| `/user/me`     | `GET`     |  -     | - | -  |
+| :-------- | :-------- | :------- | :-------- | :-------------------------------- |
+| `/user/me`     | `GET`     |  `- `    | `-` | -  |
 | `/user/add`     | `POST`     |  -     | - | -  |
 | `/user/delete`     | `DELETE`     |  -   | -| -  |
 | `/user/update`     | `PUT`     | -     | - | -  |
@@ -75,11 +80,12 @@ for accessing Swagger UI
 ### REPOSITORY ENDPOINT
 
 | Endpoint | Request | Parameter | Type     | Description                       |
-| :-------- | :-------- | :------- | :-------------------------------- |
+| :-------- | :--------| :--------  | :------- | :-------------------------------- |
 | `/boosted/repos`     | `GET`     |-     | - | -  |
 | `/boosted/repos`     | `POST`     |-     | - | -  |
-| `/boosted/repos/{id}`     | `PUT`     | `id`   | `string` | **REQUIRED**  |
-| `/boosted/repos/{id}`     | `DELETE`     | `id`   | `string` | **REQUIRED**  |
+| `/boosted/repos/{id}`     | `PUT`     | `id`   | `string` | **REQUIRED** unique identifier  |
+| `/boosted/repos/{id}`     | `DELETE`     | `id`   | `string` | **REQUIRED**  unique identifier|
+
 
 
 # Feedback
