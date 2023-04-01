@@ -83,10 +83,16 @@ for accessing Swagger UI
 | :-------- | :--------| :--------  | :------- | :-------------------------------- |
 | `/boosted/repos`     | `GET`     |-     | - | -  |
 | `/boosted/repos`     | `POST`     |-     | - | -  |
-| `/boosted/repos/{id}`     | `PUT`     | `id`   | `string` | **REQUIRED** unique identifier  |
-| `/boosted/repos/{id}`     | `DELETE`     | `id`   | `string` | **REQUIRED**  unique identifier|
+| `/boosted/repos/{id}`     | `PUT`     | `id`   | `int` | **REQUIRED** unique identifier  |
+| `/boosted/repos/{id}`     | `DELETE`     | `id`   | `int` | **REQUIRED**  unique identifier|
 
+### BALANCE  ENDPOINT
 
+| Endpoint | Request | Parameter | Type     | Description                       |
+| :-------- | :--------| :--------  | :------- | :-------------------------------- |
+| `/user/balance/{id}`     | `GET`     |`id`     | `int` | **REQUIRED** unique identifier |
+| `/user/balance/{id}`     | `POST`     |`id`     | `int` | **REQUIRED** unique identifier  |
+| `/user/balance/{id}`     | `PUT`     | `id``user_id``balance`   | `json` | **REQUIRED** unique identifier  |
 
 # Feedback
 If you have any feedback, please reach out to me at  `rimmelasghar4@gmail.com` 
