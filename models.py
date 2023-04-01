@@ -30,8 +30,9 @@ class repoTable(Base):
         ForeignKeyConstraint(['user_id'], ['login.id']),
     )  
 
-class UserTable(Base):
-    __tablename__ = "user"
+'''table to manage and hold Balance Data'''
+class balanceTable(Base):
+    __tablename__ = "balance"
     
     id = Column(Integer, primary_key=True)
     user_id = Column(Integer)
@@ -39,4 +40,5 @@ class UserTable(Base):
     
     __table_args__ = (
         ForeignKeyConstraint(['user_id'], ['login.id']),
+        UniqueConstraint('user_id'),
     )  

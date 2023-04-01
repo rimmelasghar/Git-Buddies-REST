@@ -18,6 +18,13 @@ class User(BaseModel):
     full_name: Union[str, None] = None
     disabled: Union[bool, None] = None
 
+class UserOut(BaseModel):
+    id : int
+    username: str
+    email: Union[str, None] = None
+    full_name: Union[str, None] = None
+    disabled: Union[bool, None] = None
+    
 
 class UserIn(BaseModel):
     username: str
@@ -35,4 +42,14 @@ class Repo(BaseModel):
     repolink : str
     status : bool
     
+
+class BalanceIn(BaseModel):
+    id : int
+    user_id : int
+    balance : int
+    
+class BalanceOut(BaseModel):
+    id : int
+    user_id : int
+    balance : int
 
