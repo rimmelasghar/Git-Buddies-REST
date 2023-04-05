@@ -9,6 +9,10 @@ from schema import  User,Token,TokenData,UserInDB,UserIn,Repo,BalanceIn,BalanceO
 from models import loginTable,repoTable,balanceTable
 from connection import session
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+
+
 
 app = FastAPI()
 
@@ -18,6 +22,18 @@ SECRET_KEY = "1efdb5fc051f8135b9d4be6c60949a672969219744e21067f0a5d049414ee9df"
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
+# Allowed Origins
+# Allowed All host.
+origins = ["*"]
+
+# basic cors middle ware 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
